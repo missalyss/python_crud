@@ -5,6 +5,19 @@
     <title>Sandwiches, Bitches</title>
   </head>
   <body>
-    <h1>sandwiches, bitches. yeah.</h1>
+    <h1>My Favorite Sandwiches, Bitches</h1>
+    <p>{{sandwiches}}</p>
+    <form class="" action="/new_sandwich" method="POST">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" value="">
+      <br>
+      <label for="isSandwich">Is A Sandwich:</label>
+      <select id="isSandwich" class="" name="isSandwich">
+        <option default value=""></option>
+        <option value="true">True</option>
+      </select>
+      <br>
+      <input type="submit" name="" value="Submit">
+  </form>
   </body>
 </html>
