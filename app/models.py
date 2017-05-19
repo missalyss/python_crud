@@ -1,7 +1,7 @@
 from app import db
 
 class Sandwich(db.Model):
-    __tablename__ = "sandiwches"
+    __tablename__ = "sandwiches"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
 
