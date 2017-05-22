@@ -6,14 +6,16 @@
   </head>
   <body>
     <h1>My Favorite Sandwiches, Bitches</h1>
-    <p>{{sandwiches}}</p>
+    {% for sandwich in sandwiches %}
+    <a href="/{{sandwich.id}}"><p>{{ sandwich.name }}</p></a>
+    {% endfor %}
     <form class="" action="/new_sandwich" method="POST">
       <label for="name">Name:</label>
       <input id="name" type="text" name="name" value="">
       <br>
       <label for="isSandwich">Is A Sandwich:</label>
       <select id="isSandwich" class="" name="isSandwich">
-        <option default value=""></option>
+        <option disabled default value=""></option>
         <option value="true">True</option>
       </select>
       <br>
