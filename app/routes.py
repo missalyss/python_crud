@@ -20,7 +20,7 @@ def put(id):
     form = models.Sandwich(request.form['name'], request.form['isSandwich'])
     sandwich = models.Sandwich.query.filter_by(id=id).first()
     sandwich.name = form.name
-    # sandwich.isSandwich = form.isSandwich
+    sandwich.isSandwich = form.isSandwich
     db.session.add(sandwich)
     db.session.commit()
     return redirect('/')
@@ -29,11 +29,9 @@ def put(id):
 @app.route('/delete/<id>', methods=['POST'])
 def destroy(id):
     sandwich = models.Sandwich.query.filter_by(id=id).first()
-    print(sandwich)
-    if sandwich is not None:
-        db.session.delete(sandwich)
-        db.session.commit()
-        return redirect('/')
+    db.session.delete(sandwich)
+    db.session.commit()
+    return redirect('/')
 
 # Show
 @app.route('/<id>')
